@@ -1,0 +1,18 @@
+
+@mixin isMobile {
+  @media (width < 768px) {
+    @content;
+  }
+}
+
+@mixin isDesktop {
+  @media (width >= 768px) {
+    @content;
+  }
+}
+
+@mixin isUltrawide {
+  @media (width >= 2560px) {
+    @content;
+  }
+}
