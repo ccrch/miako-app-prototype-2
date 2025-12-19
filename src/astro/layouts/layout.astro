@@ -1,10 +1,15 @@
 ---
 import 'src/styles/styles.scss'
+
+const { pageId } = Astro.props
 ---
 
 <script>
-  import { init } from 'src/scripts/scripts'
-  init()
+  import { initScripts } from 'src/scripts/scripts'
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    await initScripts()
+  })
 </script>
 
 <html lang="en">
@@ -17,7 +22,7 @@ import 'src/styles/styles.scss'
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <title>... − miako</title>
+    <title>{pageId} − miako</title>
   </head>
   <body>
     <slot />

@@ -1,0 +1,103 @@
+
+.footer {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 2;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  // padding-bottom: 14rem;
+  padding-bottom: calc(env(safe-area-inset-bottom) * 0.5);
+  background: var(--color-white-snow);
+  touch-action: manipulation;
+  
+  &__links {
+    @include flex-row;
+    // height: 80rem;
+    height: 66rem;
+    border-top: 1rem solid var(--color-black-charcoal--30);
+  }
+
+  &__link {
+    flex: 0 0 calc(100% / 6);
+    @include flex-column;
+    gap: 6rem;
+    position: relative;
+    z-index: 1;
+    width: calc(100% / 6);
+    height: 100%;
+    padding: 12rem 0 ;
+    color: var(--color-black-charcoal);
+    font-size: 9rem;
+    font-weight: 700;
+    line-height: 11rem;
+
+    svg {
+      width: 24rem;
+      height: 24rem;
+
+      &:first-of-type {
+        circle,
+        path {
+          stroke: var(--color-black-charcoal);
+        }
+      }
+
+      &:last-of-type {
+        display: none;
+      }
+    }
+  }
+
+  &__line {
+    position: absolute;
+    inset: -1rem auto auto 0;
+    width: calc(100% / 6);
+    height: 3rem;
+    background: transparent;
+    border: 0;
+    border-radius: 2rem;
+  }
+}
+
+// @each $page, $color in (
+//   'home' 'purple-grape',
+//   'search' 'yellow-lemon',
+//   'cart' 'orange-sun',
+//   'favorites' 'pink-bubble',
+//   'messages' 'blue-sky',
+//   'profile' 'green-meadow'
+// ) {
+//   [data-page='#{$page}'] .footer {
+//     -webkit-tap-highlight-color: var(--color-#{$color}--21);
+//   }
+// }
+
+@each $page, $color, $index in (
+  'home' 'purple-grape' 1,
+  'search' 'yellow-lemon' 2,
+  'cart' 'orange-sun' 3,
+  'favorites' 'pink-bubble' 4,
+  'messages' 'blue-sky' 5,
+  'profile' 'green-meadow' 6,
+) {
+  [data-page='#{$page}'] .footer {
+    &__link:nth-child(#{$index}) {
+      color: var(--color-#{$color});
+
+      svg {
+        &:first-of-type {
+          display: none;
+        }
+
+        &:last-of-type {
+          display: block;
+        }
+      }
+    }
+
+    &__line {
+      transform: translateX(calc(100% * #{$index - 1}));
+      background: var(--color-#{$color});
+    }
+  }
+}
