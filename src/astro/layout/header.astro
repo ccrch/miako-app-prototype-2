@@ -1,0 +1,48 @@
+---
+import Icon from 'src/astro/components/icon.astro'
+import Unicorn from 'src/astro/components/unicorn.astro'
+
+const { hasSearch = null, headline, searchPlaceholder, text } = Astro.props
+
+const url = (url) => `${import.meta.env.BASE_URL}${url}`
+---
+
+<header class="header">
+  <div class="header__navigation">
+    <nav class="header__links">
+      <a class="header__link" href={url('cart/order')}>
+        <Icon name="cart" />
+        <Icon name="cart-color" />
+        Cart
+      </a>
+      <a class="header__link" href={url('messages/all')}>
+        <Icon name="message" />
+        <Icon name="message-color" />
+        Messages
+      </a>
+      <a class="header__link" href={url('profile/dashboard')}>
+        <Icon name="profile" />
+        <Icon name="profile-color" />
+        Profile
+      </a>
+    </nav>
+  </div>
+  <h1 class="header__headline h2">{headline}</h1>
+  {text && <h2 class="header__text" set:html={text} />}
+  {
+    hasSearch && (
+      <form action={url('search/all')} class="header__search" method="post">
+        <div class="input">
+          <input name="search" placeholder={searchPlaceholder} type="text" />
+        </div>
+        <button class="button header__search-button" type="submit">
+          <Icon name="search" />
+          Search
+        </button>
+      </form>
+    )
+  }
+  <div class="header__unicorn">
+    <Unicorn name="og" />
+  </div>
+</header>

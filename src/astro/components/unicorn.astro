@@ -1,0 +1,17 @@
+---
+import OG from 'src/assets/images/unicorn-og.svg'
+
+const { name } = Astro.props
+
+const Svg = (() => {
+  switch (name) {
+    case 'og':
+      return OG
+
+    default:
+      return null
+  }
+})()
+---
+
+<Svg />

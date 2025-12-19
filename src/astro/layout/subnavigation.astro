@@ -1,0 +1,58 @@
+---
+const { pageId } = Astro.props
+
+const url = (url) => `${import.meta.env.BASE_URL}${url}`
+
+const items = {
+  home: [
+    { name: 'Hi!', link: url('home/hi') },
+    { name: 'Buy', link: url('home/buy') },
+    { name: 'Sell', link: url('home/sell') },
+    { name: 'FAQ', link: url('home/faq') },
+    { name: 'About us', link: url('home/about-us') },
+  ],
+  search: [
+    { name: 'All categories', link: url('search/all') },
+    { name: 'Featured', link: url('search/featured') },
+    { name: 'Popular', link: url('search/popular') },
+  ],
+  cart: [
+    { name: 'Your order', link: url('cart/order') },
+    { name: 'Review items', link: url('cart/review') },
+    { name: 'Shipping', link: url('cart/shipping') },
+    { name: 'Payment', link: url('cart/payment') },
+  ],
+  favorites: [
+    { name: 'Items', link: url('favorites/items') },
+    { name: 'Users', link: url('favorites/users') },
+    { name: 'Charities', link: url('favorites/charities') },
+    { name: 'Categories', link: url('favorites/categories') },
+  ],
+  messages: [
+    { name: 'All messages', link: url('messages/all') },
+    { name: 'Notifications', link: url('messages/notifications') },
+    { name: 'Archive', link: url('messages/archive') },
+  ],
+  profile: [
+    { name: 'Dashboard', link: url('profile/dashboard') },
+    { name: 'Your sales', link: url('profile/sales') },
+    { name: 'Your purchases', link: url('profile/purchases') },
+    { name: 'Your details', link: url('profile/details') },
+    { name: 'Your favorites', link: url('profile/favorites') },
+    { name: 'Settings', link: url('profile/settings') },
+    { name: 'Give feedback', link: url('profile/feedback') },
+  ],
+}
+---
+
+<section class="subnavigation">
+  <nav class="subnavigation__links">
+    {
+      items[pageId]?.map((item) => (
+        <a class="subnavigation__link" href={item.link}>
+          {item.name}
+        </a>
+      ))
+    }
+  </nav>
+</section>

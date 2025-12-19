@@ -1,9 +1,10 @@
 ---
 import 'src/styles/styles.scss'
-import Favicons from './favicons.astro'
-import Fonts from './fonts.astro'
+import Favicons from 'src/astro/core/favicons.astro'
+import Fonts from 'src/astro/core/fonts.astro'
+import Footer from 'src/astro/layout/footer.astro'
 
-const { pageId } = Astro.props
+const { pageId, pageTheme, subpageId } = Astro.props
 ---
 
 <script>
@@ -14,7 +15,7 @@ const { pageId } = Astro.props
   })
 </script>
 
-<html lang="en">
+<html class="preload" data-page={pageId} data-subpage={subpageId} data-theme={pageTheme} lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="author" content="Ccrch" />
@@ -26,9 +27,18 @@ const { pageId } = Astro.props
     <meta http-equiv="Expires" content="0" />
     <Favicons />
     <Fonts />
+    <style>
+      .preload {
+        opacity: 0;
+      }
+    </style>
     <title>{pageId} − miako</title>
   </head>
   <body>
-    <slot />
+    <div class="app">
+      <slot />
+      <Footer />
+      <label class="app__warning"><input type="checkbox" />Please watch in portrait mode.</label>
+    </div>
   </body>
 </html>

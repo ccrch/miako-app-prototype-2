@@ -1,0 +1,41 @@
+---
+import Icon from 'src/astro/components/icon.astro'
+
+const url = (url) => `${import.meta.env.BASE_URL}${url}`
+---
+
+<footer class="footer">
+  <nav class="footer__links">
+    <a class="footer__link" href={url('home/hi')}>
+      <Icon name="home" />
+      <Icon name="home-color" />
+      Home
+    </a>
+    <a class="footer__link" href={url('search/all')}>
+      <Icon name="search" />
+      <Icon name="search-color" />
+      Search
+    </a>
+    <a class="footer__link" href={url('cart/order')}>
+      <Icon name="cart" />
+      <Icon name="cart-color" />
+      Cart
+    </a>
+    <a class="footer__link" href={url('favorites/items')}>
+      <Icon name="heart" />
+      <Icon name="heart-color" />
+      Favorites
+    </a>
+    <a class="footer__link" href={url('messages/all')}>
+      <Icon name="message" />
+      <Icon name="message-color" />
+      Messages
+    </a>
+    <a class="footer__link" href={url('profile/dashboard')}>
+      <Icon name="profile" />
+      <Icon name="profile-color" />
+      Profile
+    </a>
+    <hr class="footer__line" />
+  </nav>
+</footer>

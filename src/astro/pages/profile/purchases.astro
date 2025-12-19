@@ -1,0 +1,24 @@
+---
+import Template from 'src/astro/core/template.astro'
+import Header from 'src/astro/layout/header.astro'
+import Subnavigation from 'src/astro/layout/subnavigation.astro'
+import Title from 'src/astro/components/title.astro'
+import Unicorn from 'src/astro/components/unicorn.astro'
+import { PageProps } from 'src/scripts/types'
+
+export const pageProps: PageProps = {
+  pageId: 'profile',
+  pageTheme: 'green-meadow',
+  pageTitle: 'Profile',
+  subpageId: 3,
+}
+---
+
+<Template pageId={pageProps.pageId} pageTheme={pageProps.pageTheme} subpageId={pageProps.subpageId}>
+  <Header headline="Profile" text="Your purchases" />
+  <Subnavigation pageId={pageProps.pageId} />
+  <Title headline="History of your purchases" />
+  <div class="unicorn">
+    <Unicorn name="og" />
+  </div>
+</Template>

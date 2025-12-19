@@ -1,0 +1,24 @@
+---
+import Template from 'src/astro/core/template.astro'
+import Header from 'src/astro/layout/header.astro'
+import Subnavigation from 'src/astro/layout/subnavigation.astro'
+import Title from 'src/astro/components/title.astro'
+import Unicorn from 'src/astro/components/unicorn.astro'
+import { PageProps } from 'src/scripts/types'
+
+export const pageProps: PageProps = {
+  pageId: 'favorites',
+  pageTheme: 'pink-bubble',
+  pageTitle: 'Favorites',
+  subpageId: 1,
+}
+---
+
+<Template pageId={pageProps.pageId} pageTheme={pageProps.pageTheme} subpageId={pageProps.subpageId}>
+  <Header headline="Favorites" text="Cool stuff you saved for later" />
+  <Subnavigation pageId={pageProps.pageId} />
+  <Title headline="List of your favorite items" />
+  <div class="unicorn">
+    <Unicorn name="og" />
+  </div>
+</Template>

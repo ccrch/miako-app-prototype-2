@@ -1,0 +1,14 @@
+---
+const { hasBorder = false, headline, linkUrl = null, linkText = '' } = Astro.props
+---
+
+<section class:list={['title', hasBorder && 'title--border']}>
+  <h2 class="title__headline h5" set:html={headline} />
+  {
+    linkUrl && (
+      <a class="title__link" href={linkUrl}>
+        {linkText}
+      </a>
+    )
+  }
+</section>

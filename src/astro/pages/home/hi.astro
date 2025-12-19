@@ -1,0 +1,76 @@
+---
+import Template from 'src/astro/core/template.astro'
+import Header from 'src/astro/layout/header.astro'
+import Subnavigation from 'src/astro/layout/subnavigation.astro'
+import Title from 'src/astro/components/title.astro'
+import Unicorn from 'src/astro/components/unicorn.astro'
+import { PageProps } from 'src/scripts/types'
+
+export const pageProps: PageProps = {
+  pageId: 'home',
+  pageTheme: 'purple-grape',
+  pageTitle: 'Hi!',
+  subpageId: 1,
+}
+
+const url = (url) => `${import.meta.env.BASE_URL}${url}`
+
+// {# text: 'Want to give your stuff a happy new home — for good?',
+//   text: 'Want your stuff to live happily ever after — for good?',
+//   text: 'Want to find your stuff a new adventure — for good?',
+//   text: 'Want to let your stuff shine again — for good?', #}
+
+// {#
+//   rank - start with score
+//   swipe left/right to like/dislike - like in tinder but for products
+//   categories & products - like on pinterest - more items in category = bigger tile
+//   send feedback
+//   report abuse
+//   raffles
+//   raffle icon - https://www.google.com/search?q=raffle+icon&sca_esv=20f39db26fe1047c&sxsrf=AE3TifMT7hnucJfcRcWx6gEXURKBUBydkw%3A1749956098030&ei=AjZOaP_NAen97_UPtY-FwAI&ved=0ahUKEwj_1uG8tvKNAxXp_rsIHbVHASgQ4dUDCBA&uact=5&oq=raffle+icon&gs_lp=Egxnd3Mtd2l6LXNlcnAiC3JhZmZsZSBpY29uMgUQABiABDIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeSKoWUKwPWLoUcAF4AZABAJgBlgGgAa0EqgEDMi4zuAEDyAEA-AEBmAIGoALMBMICChAAGLADGNYEGEfCAg0QABiABBiwAxhDGIoFwgIPEAAYgAQYsAMYQxiKBRgKwgIOEAAYsAMY5AIY1gTYAQHCAhYQLhiABBiwAxhDGNQCGMgDGIoF2AEBwgITEC4YgAQYsAMYQxjIAxiKBdgBAcICChAAGIAEGEMYigXCAgsQABiABBiRAhiKBcICBxAAGIAEGAqYAwCIBgGQBhG6BgYIARABGAmSBwMyLjSgB64dsgcDMS40uAfEBMIHAzItNsgHGg&sclient=gws-wiz-serp
+// #}
+
+// {# move cart & messages to top #}
+
+// {#
+//   sticky subnav on every page
+//   home - hi / sell / buy / about
+//   search - all / categories
+// #}
+
+// {# slider for how much % to donate - more the % the happier the unicorn #}
+
+// {# &__items {
+//   scroll-snap-type: x mandatory;
+//   scroll-behavior: smooth;
+//   scrollbar-width: none;
+// }
+
+// &__item {
+//   scroll-snap-align: center;
+// } #}
+---
+
+<Template pageId={pageProps.pageId} pageTheme={pageProps.pageTheme} subpageId={pageProps.subpageId}>
+  <Header headline="Welcome, David!" text="Want to set your stuff free — for good?" />
+  <Subnavigation pageId={pageProps.pageId} />
+  <Title headline="Hi there!" hasBorder />
+  <Title headline="What is <span>miako</span>?" linkText="Learn more about us" linkUrl={url('home/about-us')} />
+  <section class="cards">
+    <div class="cards__container">
+      <div class="card">
+        <h3 class="card__headline h2">Ever heard of <span>miako</span>?</h3>
+        <Unicorn name="og" />
+      </div>
+      <div class="card">
+        <h3 class="card__headline h2">It's a localized community driven marketplace where members...</h3>
+      </div>
+      <div class="card">
+        <h3 class="card__headline h2">...can buy and sell products and donate a part of the profit to charity.</h3>
+      </div>
+    </div>
+  </section>
+  <div class="unicorn">
+    <Unicorn name="og" />
+  </div>
+</Template>
