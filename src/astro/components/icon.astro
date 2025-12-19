@@ -1,0 +1,49 @@
+---
+import Cart from 'src/assets/icons/navigation/cart.svg'
+import CartColor from 'src/assets/icons/navigation/cart-color.svg'
+import Heart from 'src/assets/icons/navigation/heart.svg'
+import HeartColor from 'src/assets/icons/navigation/heart-color.svg'
+import Home from 'src/assets/icons/navigation/home.svg'
+import HomeColor from 'src/assets/icons/navigation/home-color.svg'
+import Message from 'src/assets/icons/navigation/message.svg'
+import MessageColor from 'src/assets/icons/navigation/message-color.svg'
+import Profile from 'src/assets/icons/navigation/profile.svg'
+import ProfileColor from 'src/assets/icons/navigation/profile-color.svg'
+import Search from 'src/assets/icons/navigation/search.svg'
+import SearchColor from 'src/assets/icons/navigation/search-color.svg'
+
+const { name } = Astro.props
+
+const Svg = (() => {
+  switch (name) {
+    case 'cart':
+      return Cart
+    case 'cart-color':
+      return CartColor
+    case 'heart':
+      return Heart
+    case 'heart-color':
+      return HeartColor
+    case 'home':
+      return Home
+    case 'home-color':
+      return HomeColor
+    case 'message':
+      return Message
+    case 'message-color':
+      return MessageColor
+    case 'profile':
+      return Profile
+    case 'profile-color':
+      return ProfileColor
+    case 'search':
+      return Search
+    case 'search-color':
+      return SearchColor
+    default:
+      return null
+  }
+})()
+---
+
+<Svg />

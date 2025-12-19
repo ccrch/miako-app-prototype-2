@@ -1,7 +1,11 @@
 ---
-import Layout from 'src/astro/layouts/layout.astro'
+import Template from 'src/astro/core/template.astro'
+import Icon from 'src/astro/components/icon.astro'
+import UnicornSvg from 'src/assets/images/unicorn.svg'
 ---
 
-<Layout pageId="Hi!">
-  <section>!Hi! Buy Sell FAQ About us</section>
-</Layout>
+<Template pageId="Hi!">
+  <section>Hi! − <a href={`${import.meta.env.BASE_URL}home/`}>link</a></section>
+  <UnicornSvg />
+  <Icon name="heart" />
+</Template>
