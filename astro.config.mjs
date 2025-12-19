@@ -12,13 +12,13 @@ export default defineConfig({
   //   '@styles': '/src/styles',
   //   '@scripts': '/src/scripts',
   // },
-  base: '/miako-app-prototype-2/',
+  base: process.env.ASTRO_BASE ?? '/miako-app-prototype-2/',
   devToolbar: { enabled: false },
   // experimental: {
   //   svgo: true,
   // },
   integrations: [react()],
-  outDir: 'build',
+  outDir: process.env.ASTRO_OUT_DIR ?? 'build',
   srcDir: './src/astro',
   vite: {
     css: {

@@ -13,7 +13,9 @@
   },
   "scripts": {
     "dev": "astro dev --host",
-    "build": "astro build",
+    "build": "npm run build:github && npm run build:miako-is",
+    "build:github": "cross-env ASTRO_BASE=/miako-app-prototype-2/ ASTRO_OUT_DIR=build-github astro build",
+    "build:miako-is": "cross-env ASTRO_BASE=/app-prototype-2/ ASTRO_OUT_DIR=build-miako-is astro build",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -27,6 +29,7 @@
     "@types/node": "^24.0.10",
     "acorn": "^8.15.0",
     "astro": "^5.16.3",
+    "cross-env": "^10.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "1.58.3",

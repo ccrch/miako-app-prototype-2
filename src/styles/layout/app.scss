@@ -8,6 +8,7 @@
   min-height: 123vh;
   margin: 0 auto;
   background: var(--color-white-snow);
+  clip-path: inset(0);
   
   &:has(.app__index-button) {
     min-height: 100vh;
