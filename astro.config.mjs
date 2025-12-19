@@ -12,7 +12,7 @@ export default defineConfig({
   //   '@styles': '/src/styles',
   //   '@scripts': '/src/scripts',
   // },
-  base: '/miako-mobile-prototype-2/',
+  base: '/miako-app-prototype-2/',
   devToolbar: { enabled: false },
   // experimental: {
   //   svgo: true,
