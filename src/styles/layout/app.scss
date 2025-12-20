@@ -8,7 +8,7 @@
   min-height: 123vh;
   margin: 0 auto;
   background: var(--color-white-snow);
-  clip-path: inset(0);
+  
   
   &:has(.app__index-button) {
     min-height: 100vh;
@@ -73,9 +73,15 @@
   }
 
   > .header ~ .unicorn {
+    width: 100%;
     margin: 66vh 0;
-    transform: translate(-257rem, 77rem) scaleX(-1) rotate(12deg);
-    width: 510rem;
+    padding: 0 0 100rem;
+    clip-path: inset(0);
+
+    svg {
+      transform: translate(-257rem, 77rem) scaleX(-1) rotate(12deg);
+      width: 510rem;
+    }
 
     * {
       pointer-events: none;
