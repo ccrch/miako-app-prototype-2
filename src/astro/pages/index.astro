@@ -14,7 +14,7 @@ const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')
 const url = (url) => `${import.meta.env.BASE_URL}${url}`
 ---
 
-<Template pageId={pageProps.pageId} pageTheme={pageProps.pageTheme} subpageId={pageProps.subpageId}>
+<Template {...pageProps}>
   <a class="app__index-button" href={url('home/hi')}>Home</a>
   <div class="app__index-unicorn">
     <Unicorn name="og" />

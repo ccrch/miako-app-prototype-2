@@ -14,7 +14,7 @@ export const pageProps: PageProps = {
 }
 ---
 
-<Template pageId={pageProps.pageId} pageTheme={pageProps.pageTheme} subpageId={pageProps.subpageId}>
+<Template {...pageProps}>
   <Header headline="Your Cart" text="You have no items yet" />
   <Subnavigation pageId={pageProps.pageId} />
   <Title headline="Your order" />

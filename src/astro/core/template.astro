@@ -4,7 +4,7 @@ import Favicons from 'src/astro/core/favicons.astro'
 import Fonts from 'src/astro/core/fonts.astro'
 import Footer from 'src/astro/layout/footer.astro'
 
-const { pageId, pageTheme, subpageId } = Astro.props
+const { pageId, pageTheme, pageTitle, subpageId } = Astro.props
 ---
 
 <script>
@@ -32,7 +32,7 @@ const { pageId, pageTheme, subpageId } = Astro.props
         opacity: 0;
       }
     </style>
-    <title>{pageId} − miako</title>
+    <title>{pageTitle} − miako</title>
   </head>
   <body>
     <div class="app">

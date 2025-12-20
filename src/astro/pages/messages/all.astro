@@ -14,7 +14,7 @@ export const pageProps: PageProps = {
 }
 ---
 
-<Template pageId={pageProps.pageId} pageTheme={pageProps.pageTheme} subpageId={pageProps.subpageId}>
+<Template {...pageProps}>
   <Header headline="Messages" text="You've got <em>3</em> new messages" />
   <Subnavigation pageId={pageProps.pageId} />
   <Title headline="List of all your messages" />

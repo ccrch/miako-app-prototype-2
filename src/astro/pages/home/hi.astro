@@ -51,7 +51,7 @@ const url = (url) => `${import.meta.env.BASE_URL}${url}`
 // } #}
 ---
 
-<Template pageId={pageProps.pageId} pageTheme={pageProps.pageTheme} subpageId={pageProps.subpageId}>
+<Template {...pageProps}>
   <Header headline="Welcome, David!" text="Want to set your stuff free — for good?" />
   <Subnavigation pageId={pageProps.pageId} />
   <Title headline="Hi there!" hasBorder />

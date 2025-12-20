@@ -14,7 +14,7 @@ export const pageProps: PageProps = {
 }
 ---
 
-<Template pageId={pageProps.pageId} pageTheme={pageProps.pageTheme} subpageId={pageProps.subpageId}>
+<Template {...pageProps}>
   <Header hasSearch headline="Search & buy!" searchPlaceholder="Find something cool & get it" />
   <Subnavigation pageId={pageProps.pageId} />
   <Title headline="All categories" />
